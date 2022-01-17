@@ -9,5 +9,8 @@ button {
 
 .fa-shadow { filter: drop-shadow(0px 0px 10px rgba(158, 158, 158, 0.5));}
 
-.vote-button {background-color:rgba(59, 107, 71, 0.75); border: none;}
-.vote-button:hover {background-color: rgba(32, 63, 40, 0.75);}
+.vote-button-yes {background-color:rgba(59, 107, 71, 0.75); border: none;}
+.vote-button-yes:hover {background-color: rgba(32, 63, 40, 0.75);}
+
+.vote-button-no {background-color:rgba(155, 66, 66, 0.75); border: none;}
+.vote-button-no:hover {background-color: rgba(109, 31, 28, 0.75);}
