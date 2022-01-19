@@ -1,15 +1,16 @@
-import { Col, Container, Row, Card, Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
+
 import "../../../style/index.css"
 
 function ProposalCard () {
     return (
         <Container className='d-flex align-items-center justify-content-center full-height'>
             <Row>
-                <Col xs={1} className="d-flex align-items-center">
+                {/* <Col xs={1} className="d-flex align-items-center">
                     <button><FontAwesomeIcon icon={faChevronCircleLeft} size="lg" className="fa-shadow" /></button>
-                </Col>
+                </Col> */}
                 <Col xs={10}>
                     <Card>
                         {/* <Card.Header>Proposal Type</Card.Header> */}
@@ -28,9 +29,9 @@ function ProposalCard () {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xs={1} className="d-flex align-items-center">
+                {/* <Col xs={1} className="d-flex align-items-center">
                     <button><FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="fa-shadow" /></button>
-                </Col>
+                </Col> */}
             </Row>
         </Container>
     );
