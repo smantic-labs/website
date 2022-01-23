@@ -15,4 +15,4 @@ button {
 .vote-button-no {background-color:rgba(155, 66, 66, 0.75); border: none;}
 .vote-button-no:hover {background-color: rgba(109, 31, 28, 0.75);}
 
-.carousel-control-prev-icon .carousel-control-next-icon { background-color: black }
+.carousel-control-next, .carousel-control-prev { filter: invert(100%); }

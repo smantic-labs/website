@@ -1,7 +1,7 @@
 import "../../style/index.css"
 
 import ProposalCard from "./ProposalCard/ProposalCard"
-import { Carousel } from "react-bootstrap";
+import { Row, Col, Carousel } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
@@ -13,18 +13,21 @@ function Body() {
 
     return (
         //data.map((obj, index) => { return <ProposalCard />})
-
-        <Carousel interval={null} indicators={false} variant={'dark'} nextIcon={nextIcon} prevIcon={prevIcon}>
-            <Carousel.Item>
-                <ProposalCard />
-            </Carousel.Item>
-            <Carousel.Item>
-                <ProposalCard />
-            </Carousel.Item>
-            <Carousel.Item>
-                <ProposalCard />
-            </Carousel.Item>
-        </Carousel>
+        <Row className="justify-content-md-center">
+            <Col md={6}>
+                <Carousel interval={null} indicators={false} variant={'dark'} nextIcon={nextIcon} prevIcon={prevIcon}>
+                    <Carousel.Item>
+                        <ProposalCard />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <ProposalCard />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <ProposalCard />
+                    </Carousel.Item>
+                </Carousel>
+            </Col>
+        </ Row>
     );
 }
   
