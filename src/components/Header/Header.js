@@ -4,7 +4,7 @@ function Header() {
     return (
         <Navbar>
             <Container>
-                <Navbar.Brand href="#home">Muichiro MC</Navbar.Brand>
+                <Navbar.Brand href="/">Muichiro MC</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>

@@ -10,10 +10,10 @@ function Footer() {
                     <FontAwesomeIcon icon={faDiscord} size="lg" />
                 </Col>
                 <Col>
-                    C 2022
+                    <small>2022</small>
                 </Col>
                 <Col>
-                    Tyler and Luca
+                    <small>Tyler and Luca</small>
                 </Col>
             </Row>
         </Container>
