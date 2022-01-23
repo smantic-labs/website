@@ -1,4 +1,5 @@
 import { Navbar, Container } from 'react-bootstrap'
+import LoginButton from './LoginButton/LoginButton';
 
 function Header() {
     return (
@@ -8,7 +9,7 @@ function Header() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
-                    Signed in as: <a href="#login">Mark Otto</a>
+                    <LoginButton />
                 </Navbar.Text>
                 </Navbar.Collapse>
             </Container>
