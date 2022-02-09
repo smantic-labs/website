@@ -1,9 +1,6 @@
-import LoginModal from "../LoginModal/LoginModal"
 import { React, useState, useEffect } from "react"
-import { Button } from "react-bootstrap";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import LoginModal from "../LoginModal/LoginModal"
+import AccountButton from "../AccountButton/AccountButton"
 
 async function isLoggedIn(setAddress) {
     // does not have metamask
@@ -31,19 +28,7 @@ function LoginButton() {
 
     return address ? (
         <div>
-            {/* <button onClick={getWallet}>
-                
-            </button>
-
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-            sagittis lacus vel augue laoreet rutrum faucibus.">
-            Popover on bottom
-            </button>
-            
-            */}
-            <Button type="null" >
-                <FontAwesomeIcon icon={faUser} size="lg" />
-            </Button>
+            <AccountButton address={address}/>
         </div>
     ) : (
         <LoginModal setAddress={setAddress} />

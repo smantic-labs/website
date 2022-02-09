@@ -7,7 +7,17 @@ button {
     text-shadow: 0px 0px 0px transparent;
 }
 
+.button-transparent-background, .button-transparent-background:hover{
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+
 .fa-shadow { filter: drop-shadow(0px 0px 10px rgba(158, 158, 158, 0.5));}
+.fa-shadow-black { filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));}
+.fa-dark {color: black;}
 
 .vote-button-yes {background-color:rgba(59, 107, 71, 0.75); border: none;}
 .vote-button-yes:hover {background-color: rgba(32, 63, 40, 0.75);}
