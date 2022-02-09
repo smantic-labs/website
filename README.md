@@ -11,8 +11,7 @@ An interface for smart contracts.
     - If not, then show two buttons for voting.
 
 ### TO-DO
-- Create Homepage
-- Design the login
+- Load proposal to vote in homepage after logged in
 - Socket the homepage to refresh with new incoming proposal
 
 ### Installation
