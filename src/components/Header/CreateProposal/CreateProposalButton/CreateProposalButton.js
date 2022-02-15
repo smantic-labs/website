@@ -7,7 +7,7 @@ import "../../../../style/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileSignature } from '@fortawesome/free-solid-svg-icons'
 
-function CreateProposalButton() {
+function CreateProposalButton({address}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -18,7 +18,7 @@ function CreateProposalButton() {
             <Button type="null" className="button-transparent-background" onClick={handleShow}>
                 <FontAwesomeIcon icon={faFileSignature} size="lg" className="fa-dark" />
             </Button>
-            <CreateProposalModal show={show} handleClose={handleClose}/>
+            <CreateProposalModal show={show} handleClose={handleClose} address={address}/>
         </>
     )
 }

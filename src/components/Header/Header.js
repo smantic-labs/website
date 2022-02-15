@@ -10,7 +10,7 @@ function Header({address}) {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text className='px-2'>
-                        <CreateProposalButton />
+                        <CreateProposalButton address={address} />
                     </Navbar.Text>
                     <Navbar.Text className='px-4'>
                         <LoginButton address={address} />
