@@ -6,6 +6,7 @@ An interface for smart contracts.
 
 #### homepage
 - After logging in with MetaMask
+- modal to create new proposal
 - Scroll through new proposal
     - If proposal was voted by the user then prompt the results
     - If not, then show two buttons for voting.
