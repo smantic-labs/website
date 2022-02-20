@@ -1,8 +1,33 @@
-import { React } from "react"
+import { React, useState } from "react"
 
 import { Button, Modal, Form } from "react-bootstrap"
 
 function CreateProposalModal({ show, handleClose, address }) {
+    const [selected, setSelected] = useState("");
+
+    const response = {
+        ImmediateBan: {
+            times: "1 hours",
+            percentageRequired: 60
+        },
+        Ban: {
+            times: "1 days",
+            percentageRequired: 30
+        },
+        Unban: {
+            times: "1 days",
+            percentageRequired: 30
+        },
+        Whitelist: {
+            times: "1 days",
+            percentageRequired: 30
+        },
+        ResetWorld: {
+            times: "1 weeks",
+            percentageRequired: 75
+        }
+    }
+
     return (
         <Modal show={show} onHide={handleClose}
             keyboard={false}
@@ -16,22 +41,18 @@ function CreateProposalModal({ show, handleClose, address }) {
                 <Form>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="disabledSelect">Proposal Type</Form.Label>
-                        <Form.Select id="disabledSelect">
-                            <option>ImmediateBan</option>
-                            <option>Ban</option>
-                            <option>Unban</option>
-                            <option>Whitelist</option>
-                            <option>ResetWorld</option>
+                        <Form.Select id="disabledSelect" onChange={v => { setSelected(v.target.value) }}>
+                            {Object.keys(response).map((value, index) => {
+                                return <option key={index} value={value}>{value}</option>
+                            })}
                         </Form.Select>
                     </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
+                    {/* selected ? (
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Time duration</Form.Label>
+                            <Form.Control placeholder={response[selected].times} />
+                        </Form.Group>
+                    ) */}
                 </Form>
             </Modal.Body>
             <Modal.Footer>
