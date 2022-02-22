@@ -1,29 +1,35 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import "../../../style/index.css"
 
-function ProposalCard () {
+function ProposalCard({ address }) {
     return (
         <Container className='d-flex align-items-center justify-content-center full-height'>
             <Row className="justify-content-md-center">
-                 <Col xs={10}>
+                <Col xs={10}>
                     <Card>
                         {/* <Card.Header>Proposal Type</Card.Header> */}
                         <Card.Body className="p-5">
                             <div className="p-5">
                                 <Card.Title>Title</Card.Title>
                                 <Card.Text>
-                                With supporting text below as a natural lead-in to additional content.
+                                    With supporting text below as a natural lead-in to additional content.
                                 </Card.Text>
                             </div>
                             <hr />
-                            <div className="text-center">
-                                <Button className="vote-button-yes mx-2">Yes</Button> 
-                                <Button className="vote-button-no mx-2">No</Button> 
-                            </div>
+                            {address ? (
+                                <div className="text-center">
+                                    <Button className="vote-button-yes mx-2">Yes</Button>
+                                    <Button className="vote-button-no mx-2">No</Button>
+                                </div>
+                            ) : (
+                                <div className="text-center">
+                                    Login to vote
+                                </div>
+                            )}
                         </Card.Body>
                     </Card>
-                 </Col>
+                </Col>
             </Row>
         </Container>
     );

@@ -39,7 +39,7 @@ function App() {
     return (
         <>
             <Header address={address} setAddress={setAddress} />
-            <Body />
+            <Body address={address} />
             <Footer />
         </>
     )
