@@ -6,29 +6,32 @@ import { Row, Col, Carousel } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
 
-function Body({address}) {
+function Body({ address }) {
     const nextIcon = <FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="fa-shadow" />
     const prevIcon = <FontAwesomeIcon icon={faChevronCircleLeft} size="lg" className="fa-shadow" />
-    //const data = [ {title: "Title 1", description: "With supporting text below as a natural lead-in to additional content."}, {title: "Title 2", description: "With supporting text below as a natural lead-in to additional content."} ];
+    const data = [
+        { title: "Title 1", body: "With supporting text below as a natural lead-in to additional content." },
+        { title: "Title 2", body: "With supporting text below as a natural lead-in to additional content." },
+        { title: "Title 3", body: "With supporting text below as a natural lead-in to additional content." }
+    ];
 
     return (
         //data.map((obj, index) => { return <ProposalCard />})
         <Row className="justify-content-md-center">
             <Col md={6}>
                 <Carousel interval={null} indicators={false} variant={'dark'} nextIcon={nextIcon} prevIcon={prevIcon}>
-                    <Carousel.Item>
-                        <ProposalCard address={address} />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <ProposalCard address={address} />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <ProposalCard address={address} />
-                    </Carousel.Item>
+                    {data.map((item, index) => {
+                        console.log(item, index)
+                        return (
+                            <Carousel.Item key={index}>
+                                <ProposalCard address={address} title={item.title} body={item.body}/>
+                            </Carousel.Item>
+                        )
+                    })}
                 </Carousel>
             </Col>
         </ Row>
     );
 }
-  
+
 export default Body;

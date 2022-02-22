@@ -2,7 +2,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 import "../../../style/index.css"
 
-function ProposalCard({ address }) {
+function ProposalCard({ address, title, body }) {
     return (
         <Container className='d-flex align-items-center justify-content-center full-height'>
             <Row className="justify-content-md-center">
@@ -11,9 +11,9 @@ function ProposalCard({ address }) {
                         {/* <Card.Header>Proposal Type</Card.Header> */}
                         <Card.Body className="p-5">
                             <div className="p-5">
-                                <Card.Title>Title</Card.Title>
+                                <Card.Title>{title}</Card.Title>
                                 <Card.Text>
-                                    With supporting text below as a natural lead-in to additional content.
+                                    {body}
                                 </Card.Text>
                             </div>
                             <hr />
