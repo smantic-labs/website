@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 import "../../../style/index.css"
 
