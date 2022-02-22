@@ -1,5 +1,5 @@
 import { React, useState } from "react"
-import { Button } from "react-bootstrap"
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap"
 import CreateProposalModal from "../CreateProposalModal/CreateProposalModal"
 
 import "../../../../style/index.css"
@@ -15,11 +15,22 @@ function CreateProposalButton({address}) {
 
     return (
         <>
-            <Button type="null" className="button-transparent-background" onClick={handleShow}>
-                <FontAwesomeIcon icon={faFileSignature} size="lg" className="fa-dark" />
-            </Button>
+            <OverlayTrigger
+                key={1}
+                placement={'bottom'}
+                overlay={
+                    <Tooltip id={'tooltip-bottom'}>
+                        Create proposal
+                    </Tooltip>
+                }
+            >
+                <Button type="null" className="button-transparent-background" onClick={handleShow}>
+                    <FontAwesomeIcon icon={faFileSignature} size="lg" className="fa-dark" />
+                </Button>
+            </OverlayTrigger>
             <CreateProposalModal show={show} handleClose={handleClose} address={address}/>
         </>
+        
     )
 }
 

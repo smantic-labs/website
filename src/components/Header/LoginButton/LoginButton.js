@@ -6,14 +6,14 @@ import "../../../style/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
-function LoginButton({address, setAddress}) {
+function LoginButton({ address, setAddress }) {
 
     async function login(setAddress) {
         try {
             const accounts = await window.ethereum.request({
                 method: "eth_requestAccounts",
             });
-    
+
             if (accounts.length > 0) {
                 setAddress(accounts[0])
                 return
@@ -32,15 +32,25 @@ function LoginButton({address, setAddress}) {
                     {address}
                 </Tooltip>
             }
-            >
+        >
             <Button type="null" className="button-transparent-background">
                 <FontAwesomeIcon icon={faUser} size="lg" className="fa-dark" />
             </Button>
         </OverlayTrigger>
     ) : (
-        <Button type="null" className="button-transparent-background" onClick={() => login(setAddress)}>
-            <FontAwesomeIcon icon={faUser} size="lg" className="fa-dark" />
-        </Button>
+        <OverlayTrigger
+            key={1}
+            placement={'bottom'}
+            overlay={
+                <Tooltip id={'tooltip-bottom'}>
+                    Click to login
+                </Tooltip>
+            }
+        >
+            <Button type="null" className="button-transparent-background" onClick={() => login(setAddress)}>
+                <FontAwesomeIcon icon={faUser} size="lg" className="fa-dark" />
+            </Button>
+        </OverlayTrigger>
     )
 }
 
