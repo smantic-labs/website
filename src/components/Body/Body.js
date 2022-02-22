@@ -21,7 +21,6 @@ function Body({ address }) {
             <Col md={6}>
                 <Carousel interval={null} indicators={false} variant={'dark'} nextIcon={nextIcon} prevIcon={prevIcon}>
                     {data.map((item, index) => {
-                        console.log(item, index)
                         return (
                             <Carousel.Item key={index}>
                                 <ProposalCard address={address} title={item.title} body={item.body}/>
