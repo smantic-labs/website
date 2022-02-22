@@ -47,19 +47,28 @@ function CreateProposalModal({ show, handleClose, address }) {
                             })}
                         </Form.Select>
                     </Form.Group>
-                    {/* selected ? (
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                    {selected ? (
+                        <Form.Group className="mb-3" controlId="formTimes">
                             <Form.Label>Time duration</Form.Label>
-                            <Form.Control placeholder={response[selected].times} />
+                            <Form.Control placeholder={response[selected].times} disabled />
+                            <Form.Label>Percentage of favorable votes</Form.Label>
+                            <Form.Control placeholder={response[selected].percentageRequired+"%"} disabled />
                         </Form.Group>
-                    ) */}
+                    ) : ( 
+                        <Form.Group className="mb-3" controlId="formTimes">
+                            <Form.Label>Time duration</Form.Label>
+                            <Form.Control placeholder={""} disabled />
+                            <Form.Label>Percentage of favorable votes</Form.Label>
+                            <Form.Control placeholder={"%"} disabled />
+                        </Form.Group>
+                    )}
                 </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={handleClose} disabled={!address}>
                     Submit
                 </Button>
             </Modal.Footer>

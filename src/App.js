@@ -4,15 +4,8 @@ import { React, useState, useEffect } from "react"
 import Header from './components/Header/Header'
 import Body from './components/Body/Body'
 import Footer from './components/Footer/Footer'
-import LoginModal from './components/LoginModal/LoginModal'
 
 async function isLoggedIn(setAddress) {
-    // does not have metamask
-    if (!window.ethereum) {
-        alert("Get MetaMask!");
-        return;
-    }
-
     const accounts = await window.ethereum.request({
         method: "eth_accounts",
     });
@@ -20,6 +13,19 @@ async function isLoggedIn(setAddress) {
     if (accounts.length > 0) {
         setAddress(accounts[0])
         return
+    } else {
+        try {
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts",
+            });
+    
+            if (accounts.length > 0) {
+                setAddress(accounts[0])
+                return
+            }
+        } catch (e) {
+            // nothing for now.
+        }
     }
 }
 
@@ -30,14 +36,12 @@ function App() {
         isLoggedIn(setAddress);
     }, []);
 
-    return address ? (
-         <>
-            <Header address={address} />
-            <Body />
+    return (
+        <>
+            <Header address={address} setAddress={setAddress} />
+            <Body address={address} />
             <Footer />
         </>
-    ) : (
-        <LoginModal setAddress={setAddress} />
     )
 }
 
