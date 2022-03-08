@@ -2,7 +2,8 @@ import { Navbar, Container } from 'react-bootstrap'
 import LoginButton from './LoginButton/LoginButton';
 import CreateProposalButton from './CreateProposal/CreateProposalButton/CreateProposalButton';
 
-function Header({address, setAddress}) {
+function Header(props) {
+    let { contract, provider, address} = props
     return (
         <Navbar>
             <Container>
@@ -13,7 +14,7 @@ function Header({address, setAddress}) {
                         <CreateProposalButton address={address} />
                     </Navbar.Text>
                     <Navbar.Text className='px-4'>
-                        <LoginButton address={address} setAddress={setAddress} />
+                        <LoginButton address={address} />
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>
