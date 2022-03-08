@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
-import "../../../style/index.css"
+import "../../style/index.css"
 
 function ProposalCard({ address, title, body }) {
     return (

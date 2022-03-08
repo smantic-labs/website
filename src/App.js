@@ -7,13 +7,11 @@ import Footer from './components/Footer/Footer'
 import { ethers } from "ethers"
 import abi from "./abi"
 
-const contract_address = "0x3174B73CE6935161fc6d80219fC35558D8928177"
+const contract_address = "3174B73CE6935161fc6d80219fC35558D8928177"
 
 
 
 function App() {
-
-    var account;
 
     let login = async() => { 
 
@@ -28,10 +26,10 @@ function App() {
             accounts = await window.ethereum.request({
                 method: "eth_requestAccounts",
             });
-
-        } 
+        }
+        return accounts[0]
     }
-    login();
+    let account = login();
 
     if (window.ethereum == null) { 
         // TODO: use backend server or infura reverse proxy. 
@@ -43,7 +41,6 @@ function App() {
     var provider = new ethers.providers.Web3Provider(window.ethereum);
     var contract = new ethers.Contract(contract_address, abi, provider);
     let props = {contract, provider, account};
-    console.log(props)
 
     // props should never change 
     // and thus never re render this component
@@ -51,7 +48,9 @@ function App() {
     return (
         <>
             <Header 
-                props={props}
+              contract
+              provider
+              account
             />
             <Body
                 props={props}
