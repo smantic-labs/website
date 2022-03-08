@@ -6,9 +6,14 @@ import { Row, Col, Carousel } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
 
-function Body({ address }) {
+function Body(props) {
+
+    let { contract, provider, address} = props
+
     const nextIcon = <FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="fa-shadow" />
     const prevIcon = <FontAwesomeIcon icon={faChevronCircleLeft} size="lg" className="fa-shadow" />
+
+
     const data = [
         { title: "Title 1", body: "With supporting text below as a natural lead-in to additional content." },
         { title: "Title 2", body: "With supporting text below as a natural lead-in to additional content." },
