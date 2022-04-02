@@ -26,3 +26,9 @@ button {
 .vote-button-no:hover {background-color: rgba(109, 31, 28, 0.75);}
 
 .carousel-control-next, .carousel-control-prev { filter: invert(100%); }
+
+.card-body { 
+}
+
+.card-container {
+}
