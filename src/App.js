@@ -15,7 +15,6 @@ const network = "ropsten"
 let initalState = { 
     Provider: null, 
     Account: null, 
-    Metamask: null, 
     Contract: null,
 }
 
@@ -49,6 +48,8 @@ function App() {
                         method: "eth_requestAccounts",
                     });
                 } 
+                account = accounts[0]
+                provider = new ethers.providers.Web3Provider(window.ethereum)
             } else { 
                 // use infura if there is no metamask.
                 provider = new ethers.providers.InfuraProvider(network, infura_project_id)
