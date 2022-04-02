@@ -2,8 +2,10 @@ import { Navbar, Container } from 'react-bootstrap'
 import LoginButton from './LoginButton/LoginButton';
 import CreateProposalButton from './CreateProposal/CreateProposalButton/CreateProposalButton';
 
-function Header(props) {
-    let { contract, provider, address} = props
+function Header(props) { 
+    
+    let {Contract, Provider, Account} = props
+
     return (
         <Navbar>
             <Container>
@@ -11,10 +13,10 @@ function Header(props) {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text className='px-2'>
-                        <CreateProposalButton address={address} />
+                        <CreateProposalButton address={Account} />
                     </Navbar.Text>
                     <Navbar.Text className='px-4'>
-                        <LoginButton address={address} />
+                        <LoginButton address={Account} />
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

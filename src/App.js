@@ -63,15 +63,17 @@ function App() {
         })()
     }
 
-
-    console.log(eth)
     return (
         <>
-            <Header 
-                eth
+            <Header
+              Account={eth.Account}
+              Contract={eth.Contract}
+              Provider={eth.Provider}
             />
-            <Body
-                eth
+            <Body 
+              Account={eth.Account}
+              Contract={eth.Contract}
+              Provider={eth.Provider}
             />
             <Footer />
         </>

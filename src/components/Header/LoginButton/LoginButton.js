@@ -23,8 +23,8 @@ function LoginButton({ address, setAddress }) {
         }
     }
 
-    return address ? (
-        <OverlayTrigger
+    if (address != null) { 
+        return (<OverlayTrigger
             key={1}
             placement={'bottom'}
             overlay={
@@ -36,8 +36,9 @@ function LoginButton({ address, setAddress }) {
             <Button type="null" className="button-transparent-background">
                 <FontAwesomeIcon icon={faUser} size="lg" className="fa-dark" />
             </Button>
-        </OverlayTrigger>
-    ) : (
+        </OverlayTrigger>)
+    } else { 
+        return (
         <OverlayTrigger
             key={1}
             placement={'bottom'}
@@ -47,11 +48,16 @@ function LoginButton({ address, setAddress }) {
                 </Tooltip>
             }
         >
-            <Button type="null" className="button-transparent-background" onClick={() => login(setAddress)}>
+            <Button 
+                type="null"
+                className="button-transparent-background" 
+                onClick={() => login(setAddress)}
+            >
                 <FontAwesomeIcon icon={faUser} size="lg" className="fa-dark" />
             </Button>
         </OverlayTrigger>
-    )
+        )
+    }
 }
 
 export default LoginButton;
