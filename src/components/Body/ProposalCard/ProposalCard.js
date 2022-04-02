@@ -2,16 +2,20 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 import "../../../style/index.css"
 
-function ProposalCard({ address, title, body }) {
+function ProposalCard(props) {
+    let { address, title, body  } = props 
+
+
+
     return (
         <Container className='d-flex align-items-center justify-content-center full-height'>
             <Row className="justify-content-md-center">
-                <Col xs={10}>
-                    <Card>
-                        {/* <Card.Header>Proposal Type</Card.Header> */}
-                        <Card.Body className="p-5">
+                    <Card className="card-container">
+                        <Card.Body className="card-body">
                             <div className="p-5">
-                                <Card.Title>{title}</Card.Title>
+                                <Card.Title>
+                                    {title}
+                                </Card.Title>
                                 <Card.Text>
                                     {body}
                                 </Card.Text>
@@ -29,7 +33,6 @@ function ProposalCard({ address, title, body }) {
                             )}
                         </Card.Body>
                     </Card>
-                </Col>
             </Row>
         </Container>
     );

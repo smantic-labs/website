@@ -6,15 +6,16 @@ import ProposalCarousel from './Carousel'
 
 function Body(props) {
 
-    let { Contract, Provider, Address} = props;
+    let { Contract, Provider, Account} = props;
 
+    console.log(props)
     return (
         <Row className="justify-content-md-center">
             <Col md={6}>
                 <ProposalCarousel
                   Contract={Contract} 
                   Provider={Provider}
-                  Address={Address}
+                  Address={Account}
                 />
             </Col>
         </ Row>

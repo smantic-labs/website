@@ -26,7 +26,7 @@ function ProposalCarousel(props) {
 
     const nextIcon = <FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="fa-shadow" />
     const prevIcon = <FontAwesomeIcon icon={faChevronCircleLeft} size="lg" className="fa-shadow" />
-    console.log(proposals)
+    console.log(Address)
 
     let items = [] 
 
