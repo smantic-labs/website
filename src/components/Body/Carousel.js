@@ -26,18 +26,22 @@ function ProposalCarousel(props) {
 
     const nextIcon = <FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="fa-shadow" />
     const prevIcon = <FontAwesomeIcon icon={faChevronCircleLeft} size="lg" className="fa-shadow" />
-    console.log(Address)
 
     let items = [] 
 
     for(let i = 0; i < proposals.length; i++){ 
         let proposal = proposals[i]
+        console.log(proposal)
         items.push(
           <Carousel.Item key={i}>
               <ProposalCard 
                   address={Address} 
                   title={ProposalTypes[proposal.kind]} 
-                  body={"Placeholder body"}/>
+                  body={"Placeholder body"}
+                  kind={proposal.kind}
+                  inFavorCount={parseInt(proposal.pro._hex)}
+                  startTime={parseInt(proposal.startTime._hex)}
+            />
           </Carousel.Item>
         );
     }

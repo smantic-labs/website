@@ -8,7 +8,6 @@ function Body(props) {
 
     let { Contract, Provider, Account} = props;
 
-    console.log(props)
     return (
         <Row className="justify-content-md-center">
             <Col md={6}>
