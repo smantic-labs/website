@@ -13,7 +13,7 @@ function Header(props) {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text className='px-2'>
-                        <CreateProposalButton address={Account} />
+                        <CreateProposalButton props={props} />
                     </Navbar.Text>
                     <Navbar.Text className='px-4'>
                         <LoginButton address={Account} />
