@@ -4,6 +4,9 @@ Written by Luca and Tyler. 2022.
 ### Pages
 An interface for smart contracts.
 
+### Workflow
+the [gov](https://github.com/muichiro-mc/gov) reads from the blockchain and sends commands to the mc server. For example, a ban proposal finishes on the contract, then the gov program picks it up and sends command to mc server.
+
 #### homepage
 - After logging in with MetaMask
 - modal to create new proposal
