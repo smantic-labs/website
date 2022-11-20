@@ -13,3 +13,7 @@ An interface for smart contracts.
 
 ### Installation
 After cloning the repo, do `npm install` and `npm start`.
+
+### Deployed smart contracts
+- [https://ropsten.etherscan.io/address/0x3174b73ce6935161fc6d80219fc35558d8928177#readContract](https://ropsten.etherscan.io/address/0x3174b73ce6935161fc6d80219fc35558d8928177#readContract)
+- [https://goerli.etherscan.io/address/0x78a642ee52609ea255d84299946fc23f02009c99](https://goerli.etherscan.io/address/0x78a642ee52609ea255d84299946fc23f02009c99)
