@@ -2,7 +2,7 @@ import { React, useState } from "react"
 import { Button, Modal, Form } from "react-bootstrap"
 
 function CreateProposalModal({ show, handleClose, props }) {
-    const [selected, setSelected] = useState("");
+    const [selected, setSelected] = useState("ImmediateBan");
     const [mcUsernameBan, setMcUsername] = useState("");
 
     const response = {
