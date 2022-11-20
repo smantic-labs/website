@@ -7,7 +7,7 @@ import "../../../../style/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileSignature } from '@fortawesome/free-solid-svg-icons'
 
-function CreateProposalButton({address}) {
+function CreateProposalButton({props}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -28,7 +28,7 @@ function CreateProposalButton({address}) {
                     <FontAwesomeIcon icon={faFileSignature} size="lg" className="fa-dark" />
                 </Button>
             </OverlayTrigger>
-            <CreateProposalModal show={show} handleClose={handleClose} address={address}/>
+            <CreateProposalModal show={show} handleClose={handleClose} props={props}/>
         </>
         
     )
