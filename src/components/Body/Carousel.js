@@ -31,7 +31,7 @@ function ProposalCarousel(props) {
 
     for(let i = 0; i < proposals.length; i++){ 
         let proposal = proposals[i]
-        console.log(proposal)
+        // console.log(proposal)
         items.push(
           <Carousel.Item key={i}>
               <ProposalCard 
