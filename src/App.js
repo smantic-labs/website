@@ -7,9 +7,9 @@ import Footer from './components/Footer/Footer'
 import { ethers } from "ethers"
 import abi from "./abi"
 
-const contract_address = "0x3174B73CE6935161fc6d80219fC35558D8928177"
+const contract_address = "0x78A642Ee52609Ea255d84299946Fc23F02009C99"
 const infura_project_id = "398f95cb8ffc4a18820d767955580aea"
-const network = "ropsten"
+const network = "goerli"
 
 
 let initalState = { 
@@ -57,7 +57,7 @@ function App() {
 
             setEth({ 
                 Provider: provider,
-                Contract: new ethers.Contract(contract_address, abi, provider),
+                Contract: new ethers.Contract(contract_address, abi, provider.getSigner()),
                 Account: account, 
             })
         })()
