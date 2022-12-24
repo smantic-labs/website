@@ -34,11 +34,13 @@ function ProposalCarousel(props) {
             <Carousel.Item key={i}>
                 <ProposalCard 
                     address={Address} 
+                    contract={Contract}
+                    proposal={proposal}
                     title={ProposalTypes[proposal.kind]} 
-                    body={"Placeholder body"}
+                    body={proposal[1]._hex}
                     kind={proposal.kind}
-                    inFavorCount={parseInt(proposal.pro._hex)}
-                    startTime={parseInt(proposal.startTime._hex)*1000}
+                    inFavorCount={parseInt(proposal.pro.toNumber())}
+                    startTime={parseInt(proposal.startTime.toNumber())*1000}
                 />
             </Carousel.Item>
             );

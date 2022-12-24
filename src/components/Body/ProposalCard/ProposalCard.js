@@ -7,14 +7,28 @@ import "../../../style/index.css"
 const proposal_lengths = [3600,86400,86400,86400,604800]
 
 function ProposalCard(props) {
-    let { address, title, body, kind, inFavorCount, startTime  } = props 
+    let { address, contract, proposal, title, body, kind, inFavorCount, startTime } = props 
 
+    var disabled = false
     var end_date 
 
     if (startTime == 0) { 
         end_date = "proposal has not started."
+    } else if (Date.now() > startTime) {
+        // disabled = true
+        end_date = "voting has ended " + new Date(startTime + proposal_lengths[kind]).toLocaleString()
     } else { 
         end_date = "proposal ends " + new Date(startTime + proposal_lengths[kind]).toLocaleString()
+    }
+
+    function voteYes() {
+        contract.NewVoter(address)
+        // contract.Vote()
+        console.log('YES')
+    }
+
+    function voteNo() {
+        console.log('NO')
     }
 
     return (
@@ -40,8 +54,8 @@ function ProposalCard(props) {
                             <hr />
                             {address ? (
                                 <div className="text-center">
-                                    <Button className="vote-button-yes mx-2">Yes</Button>
-                                    <Button className="vote-button-no mx-2">No</Button>
+                                    <Button className="vote-button-yes mx-2" onClick={voteYes} disabled={disabled}>Yes</Button>
+                                    <Button className="vote-button-no mx-2" onClick={voteNo} disabled={disabled}>No</Button>
                                 </div>
                             ) : (
                                 <div className="text-center">
